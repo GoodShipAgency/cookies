@@ -1,7 +1,6 @@
 ## Usage
 All options are below
-```js
-/**
+```js /**
  * @function getConsent
  * Initiate a cookie consent check
  * @param {Object} config
@@ -18,12 +17,10 @@ All options are below
  * @param {Function[]=} config.response.callback - An optional series of functions to call if cookies are not blocked
  * @param {String=} config.response.ga_key - An optional Google Analytics Key
  * @param {String=} config.response.gtag_key - An optional GTag
- */
- ```
+ */ ```
 
 ### Example
- ```js
-require('path_to_module/js/tracking.js');
+ ```js require('path_to_module/js/tracking.js');
 
 getConsent({
   cookies: {
@@ -47,10 +44,7 @@ getConsent({
       }
     ]
   }
-})
-```
+}) ```
 
 ### Include css
-```scss
-  @import 'path_to_module/scss/main';
-```
+```scss @import 'path_to_module/scss/main'; ```
