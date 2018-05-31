@@ -18,7 +18,8 @@ All options are below
  * @param {Function[]=} config.response.callback - An optional series of functions to call if cookies are not blocked
  * @param {String=} config.response.ga_key - An optional Google Analytics Key
  * @param {String=} config.response.gtag_key - An optional GTag
- */ ```
+ */
+```
 
 ### Example
 ```javascript
@@ -46,7 +47,10 @@ getConsent({
       }
     ]
   }
-}) ```
+})
+```
 
 ### Include css
-```scss @import 'path_to_module/scss/main'; ```
+```scss
+@import 'path_to_module/scss/main';
+```
