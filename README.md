@@ -1,6 +1,7 @@
 ## Usage
 All options are below
-```javascript /**
+```javascript
+/**
  * @function getConsent
  * Initiate a cookie consent check
  * @param {Object} config
@@ -20,7 +21,8 @@ All options are below
  */ ```
 
 ### Example
-```javascript require('path_to_module/js/tracking.js');
+```javascript
+require('path_to_module/js/tracking.js');
 
 getConsent({
   cookies: {
