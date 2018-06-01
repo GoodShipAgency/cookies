@@ -25,7 +25,7 @@ All options are below
 ```javascript
 require('path_to_module/js/tracking.js');
 
-getConsent({
+window.getConsent({
   cookies: {
     page: "/cookies"
   },
