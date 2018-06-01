@@ -108,3 +108,6 @@ var getConsent = function(config){
   })
 }
 
+var exports = module.exports = {
+  getConsent: getConsent
+};
