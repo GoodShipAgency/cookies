@@ -93,7 +93,7 @@ window.googleAnalytics = function(settings){
  * @param {String=} config.response.ga_key - An optional Google Analytics Key
  * @param {String=} config.response.gtag_key - An optional GTag
  */
-var getConsent = function(config){
+window.getConsent = function(config){
   window.addEventListener("load", function(){
     window.cookieBanner(config.cookies.page,config.ui.main_color,config.button_color, config.ui.text);
     if(window.allowTracking()){
@@ -107,7 +107,3 @@ var getConsent = function(config){
     }
   })
 }
-
-var exports = module.exports = {
-  getConsent: getConsent
-};
