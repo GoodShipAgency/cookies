@@ -1,6 +1,8 @@
 require('./tracking.js');
 
-getConsent({
+window['ga-disable-ID'] = true
+
+window.getConsent({
   cookies: {
     page: "/cookies"
   },
@@ -18,7 +20,7 @@ getConsent({
     gtag_key: null,
     callback:[
       function() {
-        console.log('has cookies enabled')
+        window['ga-disable-ID'] = false
       }
     ]
   }

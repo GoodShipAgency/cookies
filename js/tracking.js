@@ -20,7 +20,7 @@ window.allowTracking = function(){
 
 window.cookieBanner = function(link,mainColor,buttonColor,text,cb){
   cookieconsent.initialise({
-    "type": "opt-out",
+    "type": text.refuse ? "opt-out" : "info",
     "palette": {
       "popup": {
         "background": mainColor
@@ -36,7 +36,7 @@ window.cookieBanner = function(link,mainColor,buttonColor,text,cb){
     "content": {
       "message": text.main,
       "dismiss": text.accept,
-      "deny": text.refuse,
+      "deny": text.refuse ? text.refuse : null,
       "href": link
     },
     "revokable":true,
@@ -87,8 +87,10 @@ window.initCookie = function(config){
       ga_key: config.response.ga_key ? config.response.ga_key : false,
       gtag_key: config.response.gtag_key ? config.response.gtag_key : false
     });
-    for(let i = 0; i < config.response.callback.length; i++){
-      config.response.callback[i]();
+    if(config.response.callback && config.response.callback.length > 0){
+      for(let i = 0; i < config.response.callback.length; i++){
+        config.response.callback[i]();
+      }
     }
   }
 }
@@ -104,7 +106,7 @@ window.initCookie = function(config){
  * @param {Object} config.ui.text
  * @param {String} config.ui.text.main - The main text of your cookie consent bar
  * @param {String} config.ui.text.accept - The accept button text of your cookie consent bar
- * @param {String} config.ui.text.refuse - The refuse button text of your cookie consent bar
+ * @param {String=} config.ui.text.refuse - The Optional refuse button text of your cookie consent bar
  * @param {String} config.ui.main_color - The main color of your cookie consent bar
  * @param {String} config.ui.button_color - The button color on your cookie consent bar
  * @param {Object} config.response
