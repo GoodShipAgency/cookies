@@ -115,7 +115,7 @@ window.initCookie = function(config){
 window.getConsent = function(config){
   window.addEventListener("load", function(){
     if(window.allowTracking()){
-      window.cookieBanner(config.cookies.page,config.ui.main_color,config.button_color, config.ui.text,function(){
+      window.cookieBanner(config.cookies.page,config.ui.main_color,config.ui.button_color, config.ui.text,function(){
         window.initCookie(config);
       });
       if(window.getCookie('cookieconsent_status')){
