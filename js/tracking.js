@@ -23,10 +23,10 @@ window.cookieBanner = function(link,mainColor,buttonColor,text,cb){
     "type": "opt-out",
     "palette": {
       "popup": {
-        "background": "#32db7e"
+        "background": mainColor
       },
       "button": {
-        "background": "#6f2dcb"
+        "background": buttonColor
       }
     },
     "law": {
