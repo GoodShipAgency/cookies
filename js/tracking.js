@@ -9,7 +9,7 @@ window.allowTracking = function(){
   let dnt = true;
   if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
     if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.getCookie('cookieconsent_status') == 'deny' ) {
-      dnt = false
+      dnt = false;
     }else if (typeof window.external.msTrackingProtectionEnabled == "function"){
       dnt = !window.external.msTrackingProtectionEnabled();
     }
