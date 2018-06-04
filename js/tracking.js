@@ -6,7 +6,7 @@ window.getCookie = function(name) {
 }
 
 window.allowTracking = function(){
-  let dnt = true;
+  var dnt = true;
   if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
     if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.getCookie('cookieconsent_status') == 'deny' ) {
       dnt = false;
@@ -88,7 +88,7 @@ window.initCookie = function(config){
       gtag_key: config.response.gtag_key ? config.response.gtag_key : false
     });
     if(config.response.callback && config.response.callback.length > 0){
-      for(let i = 0; i < config.response.callback.length; i++){
+      for(var i = 0; i < config.response.callback.length; i++){
         config.response.callback[i]();
       }
     }
