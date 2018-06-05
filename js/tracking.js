@@ -18,7 +18,7 @@ window.allowTracking = function(){
   return dnt;
 }
 
-window.cookieBanner = function(link,mainColor,buttonColor,text,cb){
+window.cookieBanner = function(link,mainColor,buttonColor,text,cb, location){
   cookieconsent.initialise({
     "type": text.refuse ? "opt-out" : "info",
     "palette": {
@@ -33,6 +33,7 @@ window.cookieBanner = function(link,mainColor,buttonColor,text,cb){
       "regionalLaw": false,
     },
     "theme": "edgeless",
+    "position": location ? location : null,
     "content": {
       "message": text.main,
       "dismiss": text.accept,
@@ -103,6 +104,7 @@ window.initCookie = function(config){
  * @param {Object} config.cookies
  * @param {String} config.cookies.page - The URL to your cookie policy
  * @param {Object} config.ui
+ * @param {string} config.ui.location - The location to place the cookie consent.
  * @param {Object} config.ui.text
  * @param {String} config.ui.text.main - The main text of your cookie consent bar
  * @param {String} config.ui.text.accept - The accept button text of your cookie consent bar
@@ -119,7 +121,7 @@ window.getConsent = function(config){
     if(window.allowTracking()){
       window.cookieBanner(config.cookies.page,config.ui.main_color,config.ui.button_color, config.ui.text,function(){
         window.initCookie(config);
-      });
+      }, config.ui.location);
       if(window.getCookie('cookieconsent_status')){
         window.initCookie(config);
       }
