@@ -82,12 +82,12 @@ window.googleAnalytics = function (settings) {
 };
 
 window.initCookie = function (config) {
-  if (window.allowTracking()) {
+  if (config.response !== undefined && window.allowTracking()) {
     window.googleAnalytics({
       ga_key: config.response.ga_key ? config.response.ga_key : false,
       gtag_key: config.response.gtag_key ? config.response.gtag_key : false
     });
-    if (config.response.callback && config.response.callback.length > 0) {
+    if (config.response !== undefined && config.response.callback && config.response.callback.length > 0) {
       for (var i = 0; i < config.response.callback.length; i++) {
         config.response.callback[i]();
       }

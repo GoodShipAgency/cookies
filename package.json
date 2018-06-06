@@ -1,6 +1,6 @@
 {
   "name": "consent_for_cookie",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "main": "js/tracking.js",
   "scripts": {
