@@ -33,7 +33,7 @@ window.cookieBanner = function (link, mainColor, buttonColor, text, cb, location
       "regionalLaw": false
     },
     "theme": "edgeless",
-    "position": location ? location : null,
+    "position": location ? location : "bottom",
     "content": {
       "message": text.main,
       "dismiss": text.accept,
